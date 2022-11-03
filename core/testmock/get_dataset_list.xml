@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GET_DATASET_LIST xsi:noNamespaceSchemaLocation="https://api.e-stat.go.jp/rest/3.0/schema/GetDataSetList.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <RESULT>
+        <STATUS>0</STATUS>
+        <ERROR_MSG>正常に終了しました。</ERROR_MSG>
+        <DATE>2022-11-03T23:11:22.488+09:00</DATE>
+    </RESULT>
+    <PARAMETER>
+        <LANG>J</LANG>
+        <DATA_FORMAT>X</DATA_FORMAT>
+    </PARAMETER>
+    <DATASET_LIST_INF>
+        <NUMBER>17</NUMBER>
+        <DATASET_INF id="00200502-20181005113922">
+            <DATASET_NAME>test01010101</DATASET_NAME>
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>40002</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0000020201">
+                <STAT_NAME code="00200502">社会・人口統計体系</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>市区町村データ 基礎データ（廃置分合処理済）</STATISTICS_NAME>
+                <TITLE no="0000020201">Ａ　人口・世帯</TITLE>
+                <CYCLE>年度次</CYCLE>
+                <SURVEY_DATE>0</SURVEY_DATE>
+                <OPEN_DATE>2022-06-21</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>市区町村</COLLECT_AREA>
+                <MAIN_CATEGORY code="99">その他</MAIN_CATEGORY>
+                <SUB_CATEGORY code="99">その他</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>1567404</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2022-06-21</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="CTCdemo-kokusei1">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>14382</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003038586">
+                <STAT_NAME code="00200521">国勢調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成22年国勢調査 人口等基本集計（男女・年齢・配偶関係，世帯の構成，住居の状態など）</STATISTICS_NAME>
+                <TITLE no="00100">人口，人口増減，面積及び人口密度 全国，市部・郡部，都道府県，市部・郡部，支庁，郡計，市区町村・旧市町村，全域・人口集中地区</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>201010</SURVEY_DATE>
+                <OPEN_DATE>2011-10-26</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="02">人口・世帯</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">人口</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>38712</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2022-08-31</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="00200521-20181022093938">
+            <DATASET_NAME>testCCC</DATASET_NAME>
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>159</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0000030001">
+                <STAT_NAME code="00200521">国勢調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>昭和55年国勢調査 第1次基本集計 全国編</STATISTICS_NAME>
+                <TITLE no="00101">男女の別（性別）（３），年齢５歳階級（２３），人口 全国・市部・郡部・都道府県（４７），全域・人口集中地区の別</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>198010</SURVEY_DATE>
+                <OPEN_DATE>2007-10-05</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="02">人口・世帯</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">人口</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>3651</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2021-06-25</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="CTCdemo-kokusei2">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>16779</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003038587">
+                <STAT_NAME code="00200521">国勢調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成22年国勢調査 人口等基本集計（男女・年齢・配偶関係，世帯の構成，住居の状態など）</STATISTICS_NAME>
+                <TITLE no="00200">男女別人口及び世帯の種類(２区分)別世帯数 全国，市部・郡部，都道府県，市部・郡部，支庁，郡計，市区町村・旧市町村，全域・人口集中地区</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>201010</SURVEY_DATE>
+                <OPEN_DATE>2011-10-26</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="02">人口・世帯</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">人口</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>39592</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2021-06-25</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="okayama-jinse">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>4</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003038587">
+                <STAT_NAME code="00200521">国勢調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成22年国勢調査 人口等基本集計（男女・年齢・配偶関係，世帯の構成，住居の状態など）</STATISTICS_NAME>
+                <TITLE no="00200">男女別人口及び世帯の種類(２区分)別世帯数 全国，市部・郡部，都道府県，市部・郡部，支庁，郡計，市区町村・旧市町村，全域・人口集中地区</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>201010</SURVEY_DATE>
+                <OPEN_DATE>2011-10-26</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="02">人口・世帯</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">人口</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>39592</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2021-06-25</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="yokohama-jinse">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>4</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003038587">
+                <STAT_NAME code="00200521">国勢調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成22年国勢調査 人口等基本集計（男女・年齢・配偶関係，世帯の構成，住居の状態など）</STATISTICS_NAME>
+                <TITLE no="00200">男女別人口及び世帯の種類(２区分)別世帯数 全国，市部・郡部，都道府県，市部・郡部，支庁，郡計，市区町村・旧市町村，全域・人口集中地区</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>201010</SURVEY_DATE>
+                <OPEN_DATE>2011-10-26</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="02">人口・世帯</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">人口</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>39592</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2021-06-25</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="00200521-20141212155112">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>114507</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003064691">
+                <STAT_NAME code="00200521">国勢調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成22年国勢調査 移動人口の産業等集計(移動人口の労働力状態，産業(大分類)，教育)</STATISTICS_NAME>
+                <TITLE no="00402">現住都道府県による5年前の常住地，在学か否かの別・最終卒業学校の種類(6区分)，男女別人口(転入) 都道府県</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>201010</SURVEY_DATE>
+                <OPEN_DATE>2012-07-31</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="02">人口・世帯</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">人口</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>229014</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2022-08-31</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="00200522-20150107180406">
+            <DATASET_NAME>住宅・土地統計調査　データセット１</DATASET_NAME>
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>2</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003010900">
+                <STAT_NAME code="00200522">住宅・土地統計調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成20年住宅・土地統計調査 全国編</STATISTICS_NAME>
+                <TITLE no="001-2">居住世帯の有無(9区分)別住宅数及び建物の種類(4区分)別住宅以外で人が居住する建物数―全国，人口集中地区</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>200810</SURVEY_DATE>
+                <OPEN_DATE>2010-03-30</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="08">住宅・土地・建設</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">住宅・土地</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>250</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2020-01-31</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="CTCdemo-jutaku1">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>31632</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003009791">
+                <STAT_NAME code="00200522">住宅・土地統計調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成20年住宅・土地統計調査 都道府県編</STATISTICS_NAME>
+                <TITLE no="015-1">住宅の種類(2区分)，住宅の所有の関係(5区分)，建て方(4区分)・建築の時期(6区分)別住宅数，世帯数，世帯人員，１住宅当たり居住室数，１住宅当たり居住室の畳数，１住宅当たり延べ面積，１人当たり居住室の畳数及び１室当たり人員―市区町村</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>200810</SURVEY_DATE>
+                <OPEN_DATE>2011-01-06</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="08">住宅・土地・建設</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">住宅・土地</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>769712</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2020-01-31</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="00200543-20160708172751">
+            <DATASET_NAME>平成27年[大学] 組織，大学等の種類，専門別研究本務者数（大学等）</DATASET_NAME>
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>640</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003117584">
+                <STAT_NAME code="00200543">科学技術研究調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成27年科学技術研究調査</STATISTICS_NAME>
+                <TITLE no="40201">[大学] 組織，大学等の種類，専門別研究本務者数（大学等）</TITLE>
+                <SURVEY_DATE>-</SURVEY_DATE>
+                <MAIN_CATEGORY/>
+                <SUB_CATEGORY/>
+                <OVERALL_TOTAL_NUMBER>0</OVERALL_TOTAL_NUMBER>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="CTCdemo-keizai1">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>8058</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003032616">
+                <STAT_NAME code="00200552">経済センサス－基礎調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>平成21年経済センサス-基礎調査 事業所に関する集計</STATISTICS_NAME>
+                <TITLE no="04700">産業（大分類），資本金階級（10区分），単独・本所（２区分），存続・新設・廃業別民営事業所数及び男女別従業者数（外国の会社を除く会社の単独及び本所事業所）－全国，都道府県，市区町村</TITLE>
+                <CYCLE>-</CYCLE>
+                <SURVEY_DATE>200907</SURVEY_DATE>
+                <OPEN_DATE>2011-06-03</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="07">企業・家計・経済</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">企業活動</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>8434136</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2021-03-31</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="CTCdemo-kakei1">
+            <DATASET_NAME>家計調査デモ用</DATASET_NAME>
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>454080</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003013276">
+                <STAT_NAME code="00200561">家計調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>家計調査 家計収支編 二人以上の世帯</STATISTICS_NAME>
+                <TITLE no="010">品目分類 品目分類（平成22年改定）（総数：金額）</TITLE>
+                <CYCLE>月次</CYCLE>
+                <SURVEY_DATE>0</SURVEY_DATE>
+                <OPEN_DATE>2015-02-06</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="07">企業・家計・経済</MAIN_CATEGORY>
+                <SUB_CATEGORY code="04">家計</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>3819928</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2019-10-08</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="CTCdemo-kakei2011">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>423072</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003013276">
+                <STAT_NAME code="00200561">家計調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>家計調査 家計収支編 二人以上の世帯</STATISTICS_NAME>
+                <TITLE no="010">品目分類 品目分類（平成22年改定）（総数：金額）</TITLE>
+                <CYCLE>月次</CYCLE>
+                <SURVEY_DATE>0</SURVEY_DATE>
+                <OPEN_DATE>2015-02-06</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="07">企業・家計・経済</MAIN_CATEGORY>
+                <SUB_CATEGORY code="04">家計</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>3819928</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2019-10-08</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="CTCdemo-kouri1">
+            <DATASET_NAME>小売調査デモ用</DATASET_NAME>
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>601506</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003013703">
+                <STAT_NAME code="00200571">小売物価統計調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>小売物価統計調査</STATISTICS_NAME>
+                <TITLE>主要品目の都市別小売価格－県庁所在市及び人口15万以上の市</TITLE>
+                <SURVEY_DATE>-</SURVEY_DATE>
+                <MAIN_CATEGORY/>
+                <SUB_CATEGORY/>
+                <OVERALL_TOTAL_NUMBER>0</OVERALL_TOTAL_NUMBER>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="okayama-gas">
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>1</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003013703">
+                <STAT_NAME code="00200571">小売物価統計調査</STAT_NAME>
+                <GOV_ORG code="00200">総務省</GOV_ORG>
+                <STATISTICS_NAME>小売物価統計調査</STATISTICS_NAME>
+                <TITLE>主要品目の都市別小売価格－県庁所在市及び人口15万以上の市</TITLE>
+                <SURVEY_DATE>-</SURVEY_DATE>
+                <MAIN_CATEGORY/>
+                <SUB_CATEGORY/>
+                <OVERALL_TOTAL_NUMBER>0</OVERALL_TOTAL_NUMBER>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="00350300-20220625203025">
+            <DATASET_NAME>beefpork</DATASET_NAME>
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>999</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003425296">
+                <STAT_NAME code="00350300">普通貿易統計</STAT_NAME>
+                <GOV_ORG code="00350">財務省</GOV_ORG>
+                <STATISTICS_NAME>貿易統計_全国分 概況品別国別表 輸入</STATISTICS_NAME>
+                <TITLE>確速 概況品別国別表 (輸入 1-12月：確々報)2021年 ,  (輸入 1-3月：確報 , 4月：輸入9桁速報)2022年</TITLE>
+                <CYCLE>年次</CYCLE>
+                <SURVEY_DATE>202101-202112</SURVEY_DATE>
+                <OPEN_DATE>2022-10-28</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="16">国際</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">貿易・国際収支</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>949364</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2022-10-28</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+        <DATASET_INF id="00350300-20220625205200">
+            <DATASET_NAME>beefandpork</DATASET_NAME>
+            <PUBLIC_STATE>YES</PUBLIC_STATE>
+            <RESULT_INF>
+                <TOTAL_NUMBER>1917</TOTAL_NUMBER>
+            </RESULT_INF>
+            <TABLE_INF id="0003425296">
+                <STAT_NAME code="00350300">普通貿易統計</STAT_NAME>
+                <GOV_ORG code="00350">財務省</GOV_ORG>
+                <STATISTICS_NAME>貿易統計_全国分 概況品別国別表 輸入</STATISTICS_NAME>
+                <TITLE>確速 概況品別国別表 (輸入 1-12月：確々報)2021年 ,  (輸入 1-3月：確報 , 4月：輸入9桁速報)2022年</TITLE>
+                <CYCLE>年次</CYCLE>
+                <SURVEY_DATE>202101-202112</SURVEY_DATE>
+                <OPEN_DATE>2022-10-28</OPEN_DATE>
+                <SMALL_AREA>0</SMALL_AREA>
+                <COLLECT_AREA>該当なし</COLLECT_AREA>
+                <MAIN_CATEGORY code="16">国際</MAIN_CATEGORY>
+                <SUB_CATEGORY code="01">貿易・国際収支</SUB_CATEGORY>
+                <OVERALL_TOTAL_NUMBER>949364</OVERALL_TOTAL_NUMBER>
+                <UPDATED_DATE>2022-10-28</UPDATED_DATE>
+            </TABLE_INF>
+        </DATASET_INF>
+    </DATASET_LIST_INF>
+</GET_DATASET_LIST>

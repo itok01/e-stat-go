@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<REF_DATASET xsi:noNamespaceSchemaLocation="https://api.e-stat.go.jp/rest/3.0/schema/RefDataSet.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <RESULT>
+        <STATUS>0</STATUS>
+        <ERROR_MSG>正常に終了しました。</ERROR_MSG>
+        <DATE>2022-11-04T01:51:47.507+09:00</DATE>
+    </RESULT>
+    <PARAMETER>
+        <LANG>J</LANG>
+        <DATASET_ID>CTCdemo-kokusei1</DATASET_ID>
+        <DATA_FORMAT>X</DATA_FORMAT>
+    </PARAMETER>
+    <DATASET_INF id="CTCdemo-kokusei1">
+        <NARROWING_COND>
+            <CODE_CAT01_SELECT>00710</CODE_CAT01_SELECT>
+            <LEVEL_AREA_COND>1-4</LEVEL_AREA_COND>
+        </NARROWING_COND>
+        <PUBLIC_STATE>YES</PUBLIC_STATE>
+        <RESULT_INF>
+            <TOTAL_NUMBER>14382</TOTAL_NUMBER>
+        </RESULT_INF>
+        <TABLE_INF id="0003038586">
+            <STAT_NAME code="00200521">国勢調査</STAT_NAME>
+            <GOV_ORG code="00200">総務省</GOV_ORG>
+            <STATISTICS_NAME>平成22年国勢調査 人口等基本集計（男女・年齢・配偶関係，世帯の構成，住居の状態など）</STATISTICS_NAME>
+            <TITLE no="00100">人口，人口増減，面積及び人口密度 全国，市部・郡部，都道府県，市部・郡部，支庁，郡計，市区町村・旧市町村，全域・人口集中地区</TITLE>
+            <CYCLE>-</CYCLE>
+            <SURVEY_DATE>201010</SURVEY_DATE>
+            <OPEN_DATE>2011-10-26</OPEN_DATE>
+            <SMALL_AREA>0</SMALL_AREA>
+            <COLLECT_AREA>該当なし</COLLECT_AREA>
+            <MAIN_CATEGORY code="02">人口・世帯</MAIN_CATEGORY>
+            <SUB_CATEGORY code="01">人口</SUB_CATEGORY>
+            <OVERALL_TOTAL_NUMBER>0</OVERALL_TOTAL_NUMBER>
+            <UPDATED_DATE>2022-08-31</UPDATED_DATE>
+        </TABLE_INF>
+    </DATASET_INF>
+</REF_DATASET>

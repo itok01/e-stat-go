@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GET_DATA_CATALOG xsi:noNamespaceSchemaLocation="https://api.e-stat.go.jp/rest/3.0/schema/GetDataCatalog.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <RESULT>
+        <STATUS>0</STATUS>
+        <ERROR_MSG>正常に終了しました。</ERROR_MSG>
+        <DATE>2022-11-03T23:46:29.946+09:00</DATE>
+    </RESULT>
+    <PARAMETER>
+        <LANG>J</LANG>
+        <DATA_TYPE>XLS</DATA_TYPE>
+        <DATA_FORMAT>X</DATA_FORMAT>
+        <LIMIT>1</LIMIT>
+    </PARAMETER>
+    <DATA_CATALOG_LIST_INF>
+        <NUMBER>42198</NUMBER>
+        <RESULT_INF>
+            <FROM_NUMBER>1</FROM_NUMBER>
+            <TO_NUMBER>1</TO_NUMBER>
+            <NEXT_KEY>2</NEXT_KEY>
+        </RESULT_INF>
+        <DATA_CATALOG_INF id="000001120179">
+            <DATASET>
+                <STAT_NAME code="00000002">一般職国家公務員在職状況統計表（人事統計報告）</STAT_NAME>
+                <ORGANIZATION code="00000">内閣官房</ORGANIZATION>
+                <TITLE>
+                    <NAME>一般職国家公務員在職状況統計表（平成２１年７月１日現在）_検察官在職状況統計表_2009年度</NAME>
+                    <TABULATION_CATEGORY>一般職国家公務員在職状況統計表（平成２１年７月１日現在）</TABULATION_CATEGORY>
+                    <TABULATION_SUB_CATEGORY1>検察官在職状況統計表</TABULATION_SUB_CATEGORY1>
+                    <TABULATION_SUB_CATEGORY2></TABULATION_SUB_CATEGORY2>
+                    <TABULATION_SUB_CATEGORY3></TABULATION_SUB_CATEGORY3>
+                    <TABULATION_SUB_CATEGORY4></TABULATION_SUB_CATEGORY4>
+                    <TABULATION_SUB_CATEGORY5></TABULATION_SUB_CATEGORY5>
+                    <CYCLE></CYCLE>
+                    <SURVEY_DATE>200904-201003</SURVEY_DATE>
+                    <COLLECT_AREA>該当なし</COLLECT_AREA>
+                </TITLE>
+                <DESCRIPTION/>
+                <PUBLISHER>内閣官房</PUBLISHER>
+                <CONTACT_POINT>内閣人事局</CONTACT_POINT>
+                <CREATOR>内閣人事局</CREATOR>
+                <RELEASE_DATE>2016-11-01</RELEASE_DATE>
+                <LAST_MODIFIED_DATE>2016-11-01</LAST_MODIFIED_DATE>
+                <FREQUENCY_OF_UPDATE></FREQUENCY_OF_UPDATE>
+                <LANDING_PAGE>https://www.e-stat.go.jp/stat-search/files?layout=datalist&amp;toukei=00000002&amp;tstat=000001065638&amp;cycle=0&amp;tclass1=000001065620</LANDING_PAGE>
+            </DATASET>
+            <RESOURCES>
+                <RESOURCE id="000006912081">
+                    <TITLE>
+                        <NAME>5_省庁別、区分別検察官数（第５表）</NAME>
+                        <TABLE_CATEGORY></TABLE_CATEGORY>
+                        <TABLE_NO>5</TABLE_NO>
+                        <TABLE_NAME>省庁別、区分別検察官数（第５表）</TABLE_NAME>
+                        <TABLE_EXPLANATION></TABLE_EXPLANATION>
+                        <TABLE_SUB_CATEGORY1></TABLE_SUB_CATEGORY1>
+                        <TABLE_SUB_CATEGORY2></TABLE_SUB_CATEGORY2>
+                        <TABLE_SUB_CATEGORY3></TABLE_SUB_CATEGORY3>
+                    </TITLE>
+                    <URL>https://www.e-stat.go.jp/stat-search/file-download?&amp;statInfId=000026290978&amp;fileKind=0</URL>
+                    <DESCRIPTION></DESCRIPTION>
+                    <FORMAT>XLS</FORMAT>
+                    <RELEASE_DATE>2016-11-01</RELEASE_DATE>
+                    <LAST_MODIFIED_DATE>2016-11-01</LAST_MODIFIED_DATE>
+                    <RESOURCE_LICENCE_ID>Government of Japan Standard Terms of Use</RESOURCE_LICENCE_ID>
+                    <LANGUAGE>J</LANGUAGE>
+                </RESOURCE>
+            </RESOURCES>
+        </DATA_CATALOG_INF>
+    </DATA_CATALOG_LIST_INF>
+</GET_DATA_CATALOG>

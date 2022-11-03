@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GET_STATS_LIST xsi:noNamespaceSchemaLocation="https://api.e-stat.go.jp/rest/3.0/schema/GetStatsList.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <RESULT>
+        <STATUS>0</STATUS>
+        <ERROR_MSG>正常に終了しました。</ERROR_MSG>
+        <DATE>2022-10-29T18:20:05.880+09:00</DATE>
+    </RESULT>
+    <PARAMETER>
+        <LANG>J</LANG>
+        <SURVEY_YEARS>202201</SURVEY_YEARS>
+        <DATA_FORMAT>X</DATA_FORMAT>
+        <LIMIT>2</LIMIT>
+    </PARAMETER>
+    <DATALIST_INF>
+        <NUMBER>101</NUMBER>
+        <RESULT_INF>
+            <FROM_NUMBER>1</FROM_NUMBER>
+            <TO_NUMBER>2</TO_NUMBER>
+            <NEXT_KEY>3</NEXT_KEY>
+        </RESULT_INF>
+        <TABLE_INF id="0003355224">
+            <STAT_NAME code="00100401">機械受注統計調査</STAT_NAME>
+            <GOV_ORG code="00100">内閣府</GOV_ORG>
+            <STATISTICS_NAME>機械受注統計調査 主要長期時系列統計表（2005/4～）</STATISTICS_NAME>
+            <TITLE>長期系列　主要需要者別機械受注額(原系列・年度)</TITLE>
+            <CYCLE>年度次</CYCLE>
+            <SURVEY_DATE>202104-202203</SURVEY_DATE>
+            <OPEN_DATE>2022-05-19</OPEN_DATE>
+            <SMALL_AREA>0</SMALL_AREA>
+            <COLLECT_AREA>該当なし</COLLECT_AREA>
+            <MAIN_CATEGORY code="05">鉱工業</MAIN_CATEGORY>
+            <SUB_CATEGORY code="02">製造業</SUB_CATEGORY>
+            <OVERALL_TOTAL_NUMBER>289</OVERALL_TOTAL_NUMBER>
+            <UPDATED_DATE>2022-10-19</UPDATED_DATE>
+            <STATISTICS_NAME_SPEC>
+                <TABULATION_CATEGORY>機械受注統計調査</TABULATION_CATEGORY>
+                <TABULATION_SUB_CATEGORY1>主要長期時系列統計表（2005/4～）</TABULATION_SUB_CATEGORY1>
+            </STATISTICS_NAME_SPEC>
+            <DESCRIPTION/>
+            <TITLE_SPEC>
+                <TABLE_NAME>長期系列　主要需要者別機械受注額(原系列・年度)</TABLE_NAME>
+                <TABLE_EXPLANATION>Volatile orders:Orders for ships and those from electric power companies.</TABLE_EXPLANATION>
+            </TITLE_SPEC>
+        </TABLE_INF>
+        <TABLE_INF id="0003355228">
+            <STAT_NAME code="00100401">機械受注統計調査</STAT_NAME>
+            <GOV_ORG code="00100">内閣府</GOV_ORG>
+            <STATISTICS_NAME>機械受注統計調査 主要長期時系列統計表（2005/4～）</STATISTICS_NAME>
+            <TITLE>長期系列　機種別機械受注額(大分類・中分類、原系列・年度)</TITLE>
+            <CYCLE>年度次</CYCLE>
+            <SURVEY_DATE>202104-202203</SURVEY_DATE>
+            <OPEN_DATE>2022-05-19</OPEN_DATE>
+            <SMALL_AREA>0</SMALL_AREA>
+            <COLLECT_AREA>該当なし</COLLECT_AREA>
+            <MAIN_CATEGORY code="05">鉱工業</MAIN_CATEGORY>
+            <SUB_CATEGORY code="02">製造業</SUB_CATEGORY>
+            <OVERALL_TOTAL_NUMBER>578</OVERALL_TOTAL_NUMBER>
+            <UPDATED_DATE>2022-10-19</UPDATED_DATE>
+            <STATISTICS_NAME_SPEC>
+                <TABULATION_CATEGORY>機械受注統計調査</TABULATION_CATEGORY>
+                <TABULATION_SUB_CATEGORY1>主要長期時系列統計表（2005/4～）</TABULATION_SUB_CATEGORY1>
+            </STATISTICS_NAME_SPEC>
+            <DESCRIPTION/>
+            <TITLE_SPEC>
+                <TABLE_NAME>長期系列　機種別機械受注額(大分類・中分類、原系列・年度)</TABLE_NAME>
+                <TABLE_EXPLANATION>（備考）「電子計算機等」は、「電子計算機」と「半導体製造装置」の合計。</TABLE_EXPLANATION>
+            </TITLE_SPEC>
+        </TABLE_INF>
+    </DATALIST_INF>
+</GET_STATS_LIST>
