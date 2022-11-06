@@ -18,7 +18,7 @@ type ParamsGetStatsData struct {
 	ReplaceSpChar     int    `url:"replaceSpChar,omitempty" xml:"REPLACE_SP_CHAR"`
 }
 
-type paramsGetStatsData struct {
+type ParamsGetStatsDataRoot struct {
 	CommonParams
 	ParamsGetStatsData
 }
@@ -50,7 +50,7 @@ type ResponseGetStatsDataRoot struct {
 //
 // https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0#api_2_3
 func (c *ApiClient) GetStatsData(ctx context.Context, params ParamsGetStatsData) (*ResponseGetStatsDataRoot, error) {
-	_, body, err := c.HttpClient.Get(ctx, "/getStatsData", paramsGetStatsData{
+	_, body, err := c.HttpClient.Get(ctx, "/getStatsData", ParamsGetStatsDataRoot{
 		CommonParams:       c.CommonParams,
 		ParamsGetStatsData: params,
 	})
@@ -83,7 +83,7 @@ type ParamsGetStatsDatas struct {
 	// StatsDatasSpec    []StatsDatasSpec `json:"statsDatasSpec" xml:"STATS_DATAS_SPEC"`
 }
 
-type paramsGetStatsDatas struct {
+type ParamsGetStatsDatasRoot struct {
 	CommonParams
 	ParamsGetStatsDatas
 }
@@ -134,7 +134,7 @@ type ResponseGetStatsDatasRoot struct {
 //
 // https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0#api_2_7
 func (c *ApiClient) GetStatsDatas(ctx context.Context, params ParamsGetStatsDatas, statsDatasSpec []StatsDatasSpec) (*ResponseGetStatsData, error) {
-	_, body, err := c.HttpClient.PostJsonWithQuery(ctx, "/getStatsDatas", &paramsGetStatsDatas{
+	_, body, err := c.HttpClient.PostJsonWithQuery(ctx, "/getStatsDatas", &ParamsGetStatsDatasRoot{
 		CommonParams:        c.CommonParams,
 		ParamsGetStatsDatas: params,
 	}, statsDatasSpec)

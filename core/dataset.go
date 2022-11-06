@@ -14,7 +14,7 @@ type ParamsPostDataset struct {
 	DataSetName   string `url:"dataSetName,omitempty" xml:"DATASET_NAME"`
 }
 
-type paramsPostDataset struct {
+type ParamsPostDatasetRoot struct {
 	CommonParams
 	ParamsPostDataset
 }
@@ -51,7 +51,7 @@ type ResponsePostDatasetRoot struct {
 //
 // https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0#api_2_4
 func (c *ApiClient) PostDataset(ctx context.Context, params ParamsPostDataset) (*ResponsePostDatasetRoot, error) {
-	_, body, err := c.HttpClient.Post(ctx, "/postDataset", paramsPostDataset{
+	_, body, err := c.HttpClient.Post(ctx, "/postDataset", ParamsPostDatasetRoot{
 		CommonParams:      c.CommonParams,
 		ParamsPostDataset: params,
 	})
@@ -72,7 +72,7 @@ type ParamsRefDataset struct {
 	ExplanationGetFlg string `url:"explanationGetFlg,omitempty" xml:"EXPLANATION_GET_FLG"`
 }
 
-type paramsRefDataset struct {
+type ParamsRefDatasetRoot struct {
 	CommonParams
 	ParamsRefDataset
 }
@@ -113,7 +113,7 @@ type ResponseRefDatasetRoot struct {
 //
 // https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0#api_2_5
 func (c *ApiClient) RefDataset(ctx context.Context, params ParamsRefDataset) (*ResponseRefDatasetRoot, error) {
-	_, body, err := c.HttpClient.Get(ctx, "/refDataset", paramsRefDataset{
+	_, body, err := c.HttpClient.Get(ctx, "/refDataset", ParamsRefDatasetRoot{
 		CommonParams:     c.CommonParams,
 		ParamsRefDataset: params,
 	})
@@ -134,7 +134,7 @@ type ParamsGetDatasetList struct {
 	ExplanationGetFlg string `url:"explanationGetFlg,omitempty" xml:"EXPLANATION_GET_FLG"`
 }
 
-type paramsGetDatasetList struct {
+type ParamsGetDatasetListRoot struct {
 	CommonParams
 	ParamsGetDatasetList
 }
@@ -161,7 +161,7 @@ type ResponseGetDatasetListRoot struct {
 //
 // https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0#api_2_5
 func (c *ApiClient) GetDatasetList(ctx context.Context, params ParamsGetDatasetList) (*ResponseGetDatasetListRoot, error) {
-	_, body, err := c.HttpClient.Get(ctx, "/refDataset", paramsGetDatasetList{
+	_, body, err := c.HttpClient.Get(ctx, "/refDataset", ParamsGetDatasetListRoot{
 		CommonParams:         c.CommonParams,
 		ParamsGetDatasetList: params,
 	})

@@ -20,7 +20,7 @@ type ParamsGetStatsList struct {
 	UpdatedDate       string `url:"updatedDate,omitempty" xml:"UPDATED_DATE,omitempty"`
 }
 
-type paramsGetStatsList struct {
+type ParamsGetStatsListRoot struct {
 	CommonParams
 	ParamsGetStatsList
 }
@@ -50,7 +50,7 @@ type ResponseGetStatsListRoot struct {
 //
 // https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0#api_2_1
 func (c *ApiClient) GetStatsList(ctx context.Context, params ParamsGetStatsList) (*ResponseGetStatsListRoot, error) {
-	_, body, err := c.HttpClient.Get(ctx, "/getStatsList", paramsGetStatsList{
+	_, body, err := c.HttpClient.Get(ctx, "/getStatsList", ParamsGetStatsListRoot{
 		CommonParams:       c.CommonParams,
 		ParamsGetStatsList: params,
 	})
