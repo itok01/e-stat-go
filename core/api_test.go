@@ -11,26 +11,28 @@ import (
 
 type mockHttpClient struct{}
 
-//go:embed testmock/get_stats_list.xml
-var responseGetStatsList []byte
+var (
+	//go:embed testmock/get_stats_list.xml
+	responseGetStatsList []byte
+	
+	//go:embed testmock/get_meta_info.xml
+	responseGetMetaInfoList []byte
+	
+	//go:embed testmock/get_stat_data.xml
+	responseGetStatsData []byte
+	
+	//go:embed testmock/post_dataset.xml
+	responsePostDataset []byte
+	
+	//go:embed testmock/ref_dataset.xml
+	responseRefDataset []byte
+	
+	//go:embed testmock/get_dataset_list.xml
+	responseGetDatasetList []byte
 
-//go:embed testmock/get_meta_info.xml
-var responseGetMetaInfoList []byte
-
-//go:embed testmock/get_stat_data.xml
-var responseGetStatsData []byte
-
-//go:embed testmock/post_dataset.xml
-var responsePostDataset []byte
-
-//go:embed testmock/ref_dataset.xml
-var responseRefDataset []byte
-
-//go:embed testmock/get_dataset_list.xml
-var responseGetDatasetList []byte
-
-//go:embed testmock/get_data_catalog.xml
-var responseGetDataCatalog []byte
+	//go:embed testmock/get_data_catalog.xml
+	responseGetDataCatalog []byte
+)
 
 func (hc *mockHttpClient) Get(ctx context.Context, path string, query any) (int, []byte, error) {
 	resps := map[string]map[reflect.Type][]byte{
