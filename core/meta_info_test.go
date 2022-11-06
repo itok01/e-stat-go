@@ -10,23 +10,6 @@ import (
 	"github.com/itok01/e-stat-go/core"
 )
 
-type mockHttpClientGetMetaInfoList struct{}
-
-//go:embed testmock/get_meta_info.xml
-var responseGetMetaInfoList []byte
-
-func (hc *mockHttpClientGetMetaInfoList) Get(ctx context.Context, path string, query any) (int, []byte, error) {
-	return 200, responseGetMetaInfoList, nil
-}
-
-func (hc *mockHttpClientGetMetaInfoList) Post(ctx context.Context, path string, data any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
-func (hc *mockHttpClientGetMetaInfoList) PostJsonWithQuery(ctx context.Context, path string, query any, structuredData any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
 func TestGetMetaInfoList(t *testing.T) {
 	tests := []struct {
 		name string
@@ -34,7 +17,7 @@ func TestGetMetaInfoList(t *testing.T) {
 		want core.ResponseGetMetaInfoListRoot
 	}{
 		{
-			name: "Unmarshal GetMetaInfoList",
+			name: "Unmarshal",
 			arg: core.ParamsGetMetaInfoList{
 				StatsDataId: "0003109741",
 			},
@@ -259,7 +242,7 @@ func TestGetMetaInfoList(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	hc := mockHttpClientGetMetaInfoList{}
+	hc := mockHttpClient{}
 	ac := core.NewApiClient(&hc, core.CommonParams{})
 
 	for _, tt := range tests {

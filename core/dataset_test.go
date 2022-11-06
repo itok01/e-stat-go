@@ -3,30 +3,12 @@ package core_test
 import (
 	"context"
 	_ "embed"
-	"log"
 	"reflect"
 	"testing"
 	"time"
 
 	"github.com/itok01/e-stat-go/core"
 )
-
-type mockHttpClientPostDataset struct{}
-
-//go:embed testmock/post_dataset.xml
-var responsePostDataset []byte
-
-func (hc *mockHttpClientPostDataset) Get(ctx context.Context, path string, query any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
-func (hc *mockHttpClientPostDataset) Post(ctx context.Context, path string, data any) (int, []byte, error) {
-	return 200, responsePostDataset, nil
-}
-
-func (hc *mockHttpClientPostDataset) PostJsonWithQuery(ctx context.Context, path string, query any, structuredData any) (int, []byte, error) {
-	return 200, nil, nil
-}
 
 func TestPostDataset(t *testing.T) {
 	tests := []struct {
@@ -35,7 +17,7 @@ func TestPostDataset(t *testing.T) {
 		want core.ResponsePostDatasetRoot
 	}{
 		{
-			name: "Unmarshal PostDataset",
+			name: "Unmarshal",
 			arg: core.ParamsPostDataset{
 				StatsDataId: "0003010900",
 				DataSetName: "住宅・土地統計調査　データセット１",
@@ -91,36 +73,17 @@ func TestPostDataset(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	hc := mockHttpClientPostDataset{}
+	hc := mockHttpClient{}
 	ac := core.NewApiClient(&hc, core.CommonParams{})
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := ac.PostDataset(ctx, tt.arg)
-			log.Print(got)
-			log.Print(err)
+			got, _ := ac.PostDataset(ctx, tt.arg)
 			if !reflect.DeepEqual(got, &tt.want) {
 				t.Errorf("PostDataset() = %v, want %v", got, tt.want)
 			}
 		})
 	}
-}
-
-type mockHttpClientRefDataset struct{}
-
-//go:embed testmock/ref_dataset.xml
-var responseRefDataset []byte
-
-func (hc *mockHttpClientRefDataset) Get(ctx context.Context, path string, query any) (int, []byte, error) {
-	return 200, responseRefDataset, nil
-}
-
-func (hc *mockHttpClientRefDataset) Post(ctx context.Context, path string, data any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
-func (hc *mockHttpClientRefDataset) PostJsonWithQuery(ctx context.Context, path string, query any, structuredData any) (int, []byte, error) {
-	return 200, nil, nil
 }
 
 func TestRefDataset(t *testing.T) {
@@ -130,7 +93,7 @@ func TestRefDataset(t *testing.T) {
 		want core.ResponseRefDatasetRoot
 	}{
 		{
-			name: "Unmarshal RefDataset",
+			name: "Unmarshal",
 			arg: core.ParamsRefDataset{
 				DataSetID: "CTCdemo-kokusei1",
 			},
@@ -190,7 +153,7 @@ func TestRefDataset(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	hc := mockHttpClientRefDataset{}
+	hc := mockHttpClient{}
 	ac := core.NewApiClient(&hc, core.CommonParams{})
 
 	for _, tt := range tests {
@@ -203,23 +166,6 @@ func TestRefDataset(t *testing.T) {
 	}
 }
 
-type mockHttpClientGetDatasetList struct{}
-
-//go:embed testmock/get_dataset_list.xml
-var responseGetDatasetList []byte
-
-func (hc *mockHttpClientGetDatasetList) Get(ctx context.Context, path string, query any) (int, []byte, error) {
-	return 200, responseGetDatasetList, nil
-}
-
-func (hc *mockHttpClientGetDatasetList) Post(ctx context.Context, path string, data any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
-func (hc *mockHttpClientGetDatasetList) PostJsonWithQuery(ctx context.Context, path string, query any, structuredData any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
 func TestGetDatasetList(t *testing.T) {
 	tests := []struct {
 		name string
@@ -227,7 +173,7 @@ func TestGetDatasetList(t *testing.T) {
 		want core.ResponseGetDatasetListRoot
 	}{
 		{
-			name: "Unmarshal GetDatasetList",
+			name: "Unmarshal",
 			arg:  core.ParamsGetDatasetList{},
 			want: core.ResponseGetDatasetListRoot{
 				ResponseGetDatasetList: core.ResponseGetDatasetList{
@@ -913,14 +859,12 @@ func TestGetDatasetList(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	hc := mockHttpClientGetDatasetList{}
+	hc := mockHttpClient{}
 	ac := core.NewApiClient(&hc, core.CommonParams{})
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := ac.GetDatasetList(ctx, tt.arg)
-			log.Print(got)
-			log.Print(err)
+			got, _ := ac.GetDatasetList(ctx, tt.arg)
 			if !reflect.DeepEqual(got, &tt.want) {
 				t.Errorf("GetDatasetList() = %v, want %v", got, tt.want)
 			}

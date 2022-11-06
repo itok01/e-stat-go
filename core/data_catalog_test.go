@@ -10,23 +10,6 @@ import (
 	"github.com/itok01/e-stat-go/core"
 )
 
-type mockHttpClientGetDataCatalog struct{}
-
-//go:embed testmock/get_data_catalog.xml
-var responseGetDataCatalog []byte
-
-func (hc *mockHttpClientGetDataCatalog) Get(ctx context.Context, path string, query any) (int, []byte, error) {
-	return 200, responseGetDataCatalog, nil
-}
-
-func (hc *mockHttpClientGetDataCatalog) Post(ctx context.Context, path string, data any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
-func (hc *mockHttpClientGetDataCatalog) PostJsonWithQuery(ctx context.Context, path string, query any, structuredData any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
 func TestGetDataCatalog(t *testing.T) {
 	tests := []struct {
 		name string
@@ -34,7 +17,7 @@ func TestGetDataCatalog(t *testing.T) {
 		want core.ResponseGetDataCatalogRoot
 	}{
 		{
-			name: "Unmarshal GetDataCatalog",
+			name: "Unmarshal",
 			arg: core.ParamsGetDataCatalog{
 				SurveyYears: "202201",
 				Limit:       2,
@@ -124,7 +107,7 @@ func TestGetDataCatalog(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	hc := mockHttpClientGetDataCatalog{}
+	hc := mockHttpClient{}
 	ac := core.NewApiClient(&hc, core.CommonParams{})
 
 	for _, tt := range tests {

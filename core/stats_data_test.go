@@ -10,20 +10,6 @@ import (
 	"github.com/itok01/e-stat-go/core"
 )
 
-type mockHttpClientGetStatsData struct{}
-
-//go:embed testmock/get_stat_data.xml
-var responseGetStatsData []byte
-
-func (hc *mockHttpClientGetStatsData) Get(ctx context.Context, path string, query any) (int, []byte, error) {
-	return 200, responseGetStatsData, nil
-}
-func (hc *mockHttpClientGetStatsData) Post(ctx context.Context, path string, data any) (int, []byte, error) {
-	return 200, nil, nil
-}
-func (hc *mockHttpClientGetStatsData) PostJsonWithQuery(ctx context.Context, path string, query any, structuredData any) (int, []byte, error) {
-	return 200, nil, nil
-}
 func TestGetStatsData(t *testing.T) {
 	tests := []struct {
 		name string
@@ -31,7 +17,7 @@ func TestGetStatsData(t *testing.T) {
 		want core.ResponseGetStatsDataRoot
 	}{
 		{
-			name: "Unmarshal GetStatsData",
+			name: "Unmarshal",
 			arg: core.ParamsGetStatsData{
 				StatsDataId: "0003109741",
 			},
@@ -2787,7 +2773,7 @@ func TestGetStatsData(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	hc := mockHttpClientGetStatsData{}
+	hc := mockHttpClient{}
 	ac := core.NewApiClient(&hc, core.CommonParams{})
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
