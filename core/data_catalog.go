@@ -21,7 +21,7 @@ type ParamsGetDataCatalog struct {
 	UpdatedDate       string `url:"updatedDate,omitempty" xml:"UPDATED_DATE,omitempty"`
 }
 
-type paramsGetDataCatalog struct {
+type ParamsGetDataCatalogRoot struct {
 	CommonParams
 	ParamsGetDataCatalog
 }
@@ -101,7 +101,7 @@ type ResponseGetDataCatalogRoot struct {
 //
 // https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0#api_2_1
 func (c *ApiClient) GetDataCatalog(ctx context.Context, params ParamsGetDataCatalog) (*ResponseGetDataCatalogRoot, error) {
-	_, body, err := c.HttpClient.Get(ctx, "/getDataCatalog", paramsGetDataCatalog{
+	_, body, err := c.HttpClient.Get(ctx, "/getDataCatalog", ParamsGetDataCatalogRoot{
 		CommonParams:         c.CommonParams,
 		ParamsGetDataCatalog: params,
 	})

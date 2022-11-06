@@ -1,4 +1,4 @@
-package core
+package core_test
 
 import (
 	"context"
@@ -6,74 +6,59 @@ import (
 	"reflect"
 	"testing"
 	"time"
+
+	"github.com/itok01/e-stat-go/core"
 )
-
-type mockHttpClientGetDataCatalog struct{}
-
-//go:embed testmock/get_data_catalog.xml
-var responseGetDataCatalog []byte
-
-func (hc *mockHttpClientGetDataCatalog) Get(ctx context.Context, path string, query any) (int, []byte, error) {
-	return 200, responseGetDataCatalog, nil
-}
-
-func (hc *mockHttpClientGetDataCatalog) Post(ctx context.Context, path string, data any) (int, []byte, error) {
-	return 200, nil, nil
-}
-
-func (hc *mockHttpClientGetDataCatalog) PostJsonWithQuery(ctx context.Context, path string, query any, structuredData any) (int, []byte, error) {
-	return 200, nil, nil
-}
 
 func TestGetDataCatalog(t *testing.T) {
 	tests := []struct {
 		name string
-		arg  ParamsGetDataCatalog
-		want ResponseGetDataCatalogRoot
+		arg  core.ParamsGetDataCatalog
+		want core.ResponseGetDataCatalogRoot
 	}{
 		{
-			name: "Unmarshal GetDataCatalog",
-			arg: ParamsGetDataCatalog{
+			name: "Unmarshal",
+			arg: core.ParamsGetDataCatalog{
 				SurveyYears: "202201",
 				Limit:       2,
 			},
-			want: ResponseGetDataCatalogRoot{
-				ResponseGetDataCatalog: ResponseGetDataCatalog{
-					Result: ResponseResult{
+			want: core.ResponseGetDataCatalogRoot{
+				ResponseGetDataCatalog: core.ResponseGetDataCatalog{
+					Result: core.ResponseResult{
 						Status:   0,
 						ErrorMsg: "正常に終了しました。",
 						Date:     time.Date(2022, time.November, 3, 23, 46, 29, 946000000, time.Local),
 					},
-					Parameter: ResponseGetDataCatalogParameter{
-						CommonParams: CommonParams{
+					Parameter: core.ResponseGetDataCatalogParameter{
+						CommonParams: core.CommonParams{
 							Lang: "J",
 						},
-						ParamsGetDataCatalog: ParamsGetDataCatalog{
+						ParamsGetDataCatalog: core.ParamsGetDataCatalog{
 							DataType: "XLS",
 							Limit:    1,
 						},
 					},
-					DataCatalogList: DataCatalogListInf{
+					DataCatalogList: core.DataCatalogListInf{
 						Number: 42198,
-						Result: ResultInf{FromNumber: 1,
+						Result: core.ResultInf{FromNumber: 1,
 							ToNumber: 1,
 							NextKey:  2,
 						},
-						DataCatalog: []DataCatalogInf{
+						DataCatalog: []core.DataCatalogInf{
 							{
 								ID: "000001120179",
-								Dataset: Dataset{
-									StatName: StatName{
+								Dataset: core.Dataset{
+									StatName: core.StatName{
 										Code: "00000002",
 										Name: "一般職国家公務員在職状況統計表（人事統計報告）",
 									},
-									Organization: Organization{
+									Organization: core.Organization{
 										Code: "00000",
 										Name: "内閣官房",
 									},
-									Title: DatasetTitle{
+									Title: core.DatasetTitle{
 										Name: "一般職国家公務員在職状況統計表（平成２１年７月１日現在）_検察官在職状況統計表_2009年度",
-										StatisticsNameSpec: StatisticsNameSpec{
+										StatisticsNameSpec: core.StatisticsNameSpec{
 											TabulationCategory:     "一般職国家公務員在職状況統計表（平成２１年７月１日現在）",
 											TabulationSubCategory1: "検察官在職状況統計表",
 											TabulationSubCategory2: "",
@@ -93,14 +78,14 @@ func TestGetDataCatalog(t *testing.T) {
 									FrequencyOfUpdate: "",
 									LandingPage:       "https://www.e-stat.go.jp/stat-search/files?layout=datalist&toukei=00000002&tstat=000001065638&cycle=0&tclass1=000001065620",
 								},
-								Resources: []Resources{
+								Resources: []core.Resources{
 									{
-										Resource: Resource{
+										Resource: core.Resource{
 											ID: "000006912081",
-											Title: ResourceTitle{
+											Title: core.ResourceTitle{
 												Name:        "5_省庁別、区分別検察官数（第５表）",
 												TableNumber: 5,
-												TitleSpec: TitleSpec{
+												TitleSpec: core.TitleSpec{
 													TableName: "省庁別、区分別検察官数（第５表）",
 												},
 											},
@@ -122,8 +107,8 @@ func TestGetDataCatalog(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	hc := mockHttpClientGetDataCatalog{}
-	ac := NewApiClient(&hc, CommonParams{})
+	hc := mockHttpClient{}
+	ac := core.NewApiClient(&hc, core.CommonParams{})
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

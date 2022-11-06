@@ -10,7 +10,7 @@ type ParamsGetMetaInfoList struct {
 	ExplanationGetFlg string `url:"explanationGetFlg,omitempty" xml:"EXPLANATION_GET_FLG,omitempty"`
 }
 
-type paramsGetMetaInfoList struct {
+type ParamsGetMetaInfoListRoot struct {
 	CommonParams
 	ParamsGetMetaInfoList
 }
@@ -40,7 +40,7 @@ type ResponseGetMetaInfoListRoot struct {
 //
 // https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0#api_2_2
 func (c *ApiClient) GetMetaInfoList(ctx context.Context, params ParamsGetMetaInfoList) (*ResponseGetMetaInfoListRoot, error) {
-	_, body, err := c.HttpClient.Get(ctx, "/getMetaInfo", paramsGetMetaInfoList{
+	_, body, err := c.HttpClient.Get(ctx, "/getMetaInfo", ParamsGetMetaInfoListRoot{
 		CommonParams:          c.CommonParams,
 		ParamsGetMetaInfoList: params,
 	})

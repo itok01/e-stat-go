@@ -1,4 +1,4 @@
-package core
+package core_test
 
 import (
 	"context"
@@ -6,67 +6,55 @@ import (
 	"reflect"
 	"testing"
 	"time"
+
+	"github.com/itok01/e-stat-go/core"
 )
 
-type mockHttpClientGetStatsData struct{}
-
-//go:embed testmock/get_stat_data.xml
-var responseGetStatsData []byte
-
-func (hc *mockHttpClientGetStatsData) Get(ctx context.Context, path string, query any) (int, []byte, error) {
-	return 200, responseGetStatsData, nil
-}
-func (hc *mockHttpClientGetStatsData) Post(ctx context.Context, path string, data any) (int, []byte, error) {
-	return 200, nil, nil
-}
-func (hc *mockHttpClientGetStatsData) PostJsonWithQuery(ctx context.Context, path string, query any, structuredData any) (int, []byte, error) {
-	return 200, nil, nil
-}
 func TestGetStatsData(t *testing.T) {
 	tests := []struct {
 		name string
-		arg  ParamsGetStatsData
-		want ResponseGetStatsDataRoot
+		arg  core.ParamsGetStatsData
+		want core.ResponseGetStatsDataRoot
 	}{
 		{
-			name: "Unmarshal GetStatsData",
-			arg: ParamsGetStatsData{
+			name: "Unmarshal",
+			arg: core.ParamsGetStatsData{
 				StatsDataId: "0003109741",
 			},
-			want: ResponseGetStatsDataRoot{
-				ResponseGetStatsData: ResponseGetStatsData{
-					Result: ResponseResult{
+			want: core.ResponseGetStatsDataRoot{
+				ResponseGetStatsData: core.ResponseGetStatsData{
+					Result: core.ResponseResult{
 						Status:   0,
 						ErrorMsg: "正常に終了しました。",
 						Date:     time.Date(2022, time.November, 3, 1, 49, 44, 368000000, time.Local),
 					},
-					Parameter: ResponseGetStatsDataParameter{
-						CommonParams: CommonParams{
+					Parameter: core.ResponseGetStatsDataParameter{
+						CommonParams: core.CommonParams{
 							Lang: "J",
 						},
-						ParamsGetStatsData: ParamsGetStatsData{
+						ParamsGetStatsData: core.ParamsGetStatsData{
 							StatsDataId:   "0003109741",
 							StartPosition: 1,
 							MetaGetFlg:    "Y",
 						},
 					},
-					DataList: ResponseGetStatsDataStatisticalData{
-						Result: ResultInf{
+					DataList: core.ResponseGetStatsDataStatisticalData{
+						Result: core.ResultInf{
 							FromNumber: 1,
 							ToNumber:   2508,
 						},
-						Table: TableInf{
+						Table: core.TableInf{
 							ID: "0003109741",
-							StatName: StatName{
+							StatName: core.StatName{
 								Code: "00100409",
 								Name: "国民経済計算",
 							},
-							GovOrg: GovOrg{
+							GovOrg: core.GovOrg{
 								Code: "00100",
 								Name: "内閣府",
 							},
 							StatisticsName: "四半期別ＧＤＰ速報",
-							Title: Title{
+							Title: core.Title{
 								Name: "国内総生産（支出側）及び各需要項目 名目原系列（1994年1Q～） 2015暦年基準",
 							},
 							Cycle:       "四半期",
@@ -74,32 +62,32 @@ func TestGetStatsData(t *testing.T) {
 							OpenDate:    "2022-09-08",
 							SmallArea:   0,
 							CollectArea: "該当なし",
-							MainCategory: MainCategory{
+							MainCategory: core.MainCategory{
 								Code: "07",
 								Name: "企業・家計・経済",
 							},
-							SubCategory: SubCategory{
+							SubCategory: core.SubCategory{
 								Code: "05",
 								Name: "国民経済計算",
 							},
 							OverallTotalNumber: 2508,
 							UpdatedDate:        "2022-09-16",
-							StatisticsNameSpec: StatisticsNameSpec{
+							StatisticsNameSpec: core.StatisticsNameSpec{
 								TabulationCategory: "四半期別ＧＤＰ速報",
 							},
-							TitleSpec: TitleSpec{
+							TitleSpec: core.TitleSpec{
 								TableCategory:     "国内総生産（支出側）及び各需要項目",
 								TableName:         "名目原系列（1994年1Q～）",
 								TableSubCategory1: "2015暦年基準",
 							},
 						},
-						Class: ClassInf{
-							ClassObj: []ClassObj{
+						Class: core.ClassInf{
+							ClassObj: []core.ClassObj{
 								{
 									ID:          "tab",
 									Name:        "表章項目",
 									Description: "Excelの書式設定で統計表の数値を\"-0.0\"としている場合、データベース上\"0.0\"として収録されているため、Excel統計表の数値とは必ずしも一致しない。",
-									Class: []ClassObjClass{
+									Class: []core.ClassObjClass{
 										{
 											Code: "11",
 											Name: "金額",
@@ -110,7 +98,7 @@ func TestGetStatsData(t *testing.T) {
 								{
 									ID:   "cat01",
 									Name: "国内総生産_名目原系列",
-									Class: []ClassObjClass{
+									Class: []core.ClassObjClass{
 										{Code: "11", Name: "国内総生産(支出側)", Level: "1"},
 										{Code: "12", Name: "民間最終消費支出", Level: "1"},
 										{Code: "13", Name: "民間最終消費支出_家計最終消費支出", Level: "2", ParentCode: "12"},
@@ -137,7 +125,7 @@ func TestGetStatsData(t *testing.T) {
 								{
 									ID:   "time",
 									Name: "時間軸（四半期）",
-									Class: []ClassObjClass{
+									Class: []core.ClassObjClass{
 										{Code: "1994000103", Name: "1994年1～3月期", Level: "3", ParentCode: "1994010000"},
 										{Code: "1994000406", Name: "1994年4～6月期", Level: "3", ParentCode: "1994010000"},
 										{Code: "1994000709", Name: "1994年7～9月期", Level: "3", ParentCode: "1994020000"},
@@ -252,12 +240,12 @@ func TestGetStatsData(t *testing.T) {
 										{Code: "2021001012", Name: "2021年10～12月期", Level: "3", ParentCode: "2021020000"},
 										{Code: "2022000103", Name: "2022年1～3月期", Level: "3", ParentCode: "2022010000"},
 										{Code: "2022000406", Name: "2022年4～6月期", Level: "3", ParentCode: "2022010000"}},
-									Explanation: []ClassObjExplanation(nil),
+									Explanation: []core.ClassObjExplanation(nil),
 								},
 							},
 						},
-						Data: DataInf{
-							Note: []DataInfNote{
+						Data: core.DataInf{
+							Note: []core.DataInfNote{
 								{
 									Char: "***",
 									Note: "数字が得られないもの",
@@ -267,7 +255,7 @@ func TestGetStatsData(t *testing.T) {
 									Note: "数字が得られないもの",
 								},
 							},
-							Value: []DataInfValue{
+							Value: []core.DataInfValue{
 								{Tab: "11", Cat01: "11", Time: "1994000103", Unit: "10億円", Value: "123456.1"},
 								{Tab: "11", Cat01: "11", Time: "1994000406", Unit: "10億円", Value: "124896.6"},
 								{Tab: "11", Cat01: "11", Time: "1994000709", Unit: "10億円", Value: "125738.4"},
@@ -2785,8 +2773,8 @@ func TestGetStatsData(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	hc := mockHttpClientGetStatsData{}
-	ac := NewApiClient(&hc, CommonParams{})
+	hc := mockHttpClient{}
+	ac := core.NewApiClient(&hc, core.CommonParams{})
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got, _ := ac.GetStatsData(ctx, tt.arg)
