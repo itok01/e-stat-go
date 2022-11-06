@@ -195,9 +195,7 @@ func TestRefDataset(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := ac.RefDataset(ctx, tt.arg)
-			log.Print(got)
-			log.Print(err)
+			got, _ := ac.RefDataset(ctx, tt.arg)
 			if !reflect.DeepEqual(got, &tt.want) {
 				t.Errorf("RefDataset() = %v, want %v", got, tt.want)
 			}

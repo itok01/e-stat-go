@@ -44,7 +44,6 @@ func (c *HttpClient) doRequest(req *http.Request) (int, []byte, error) {
 	if err != nil {
 		return 0, nil, err
 	}
-	log.Print(resp.Status)
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
@@ -66,11 +65,9 @@ func (c *HttpClient) request(ctx context.Context, method string, path string, st
 	if method == http.MethodGet {
 		req, err = http.NewRequestWithContext(ctx, method, targetURL, nil)
 		req.URL.RawQuery = data.Encode()
-		log.Print(req.URL.RawQuery)
 	} else if method == http.MethodPost {
 		req, err = http.NewRequestWithContext(ctx, method, targetURL, strings.NewReader(data.Encode()))
 		req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
-		log.Print(data.Encode())
 	}
 	if err != nil {
 		return 0, nil, err
@@ -103,7 +100,6 @@ func (c *HttpClient) PostJsonWithQuery(ctx context.Context, path string, query a
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, targetURL, bytes.NewBuffer(data))
 	req.Header.Add("Content-Type", "application/json")
 	req.URL.RawQuery = queryData.Encode()
-	log.Print(string(data))
 	if err != nil {
 		return 0, nil, err
 	}
