@@ -1,4 +1,4 @@
-package core
+package core_test
 
 import (
 	"context"
@@ -6,6 +6,8 @@ import (
 	"reflect"
 	"testing"
 	"time"
+
+	"github.com/itok01/e-stat-go/core"
 )
 
 type mockHttpClientGetMetaInfoList struct{}
@@ -28,42 +30,42 @@ func (hc *mockHttpClientGetMetaInfoList) PostJsonWithQuery(ctx context.Context, 
 func TestGetMetaInfoList(t *testing.T) {
 	tests := []struct {
 		name string
-		arg  ParamsGetMetaInfoList
-		want ResponseGetMetaInfoListRoot
+		arg  core.ParamsGetMetaInfoList
+		want core.ResponseGetMetaInfoListRoot
 	}{
 		{
 			name: "Unmarshal GetMetaInfoList",
-			arg: ParamsGetMetaInfoList{
+			arg: core.ParamsGetMetaInfoList{
 				StatsDataId: "0003109741",
 			},
-			want: ResponseGetMetaInfoListRoot{
-				ResponseGetMetaInfoList{
-					Result: ResponseResult{
+			want: core.ResponseGetMetaInfoListRoot{
+				core.ResponseGetMetaInfoList{
+					Result: core.ResponseResult{
 						Status:   0,
 						ErrorMsg: "正常に終了しました。",
 						Date:     time.Date(2022, time.November, 3, 1, 18, 39, 752000000, time.Local),
 					},
-					Parameter: ResponseGetMetaInfoListParameter{
-						CommonParams: CommonParams{
+					Parameter: core.ResponseGetMetaInfoListParameter{
+						CommonParams: core.CommonParams{
 							Lang: "J",
 						},
-						ParamsGetMetaInfoList: ParamsGetMetaInfoList{
+						ParamsGetMetaInfoList: core.ParamsGetMetaInfoList{
 							StatsDataId: "0003109741",
 						},
 					},
-					DataList: ResponseGetMetaInfoMetaDataList{
+					DataList: core.ResponseGetMetaInfoMetaDataList{
 						Number: 0,
-						Table: TableInf{ID: "0003109741",
-							StatName: StatName{
+						Table: core.TableInf{ID: "0003109741",
+							StatName: core.StatName{
 								Code: "00100409",
 								Name: "国民経済計算",
 							},
-							GovOrg: GovOrg{
+							GovOrg: core.GovOrg{
 								Code: "00100",
 								Name: "内閣府",
 							},
 							StatisticsName: "四半期別ＧＤＰ速報",
-							Title: Title{
+							Title: core.Title{
 								Name: "国内総生産（支出側）及び各需要項目 名目原系列（1994年1Q～） 2015暦年基準",
 							},
 							Cycle:       "四半期",
@@ -71,39 +73,39 @@ func TestGetMetaInfoList(t *testing.T) {
 							OpenDate:    "2022-09-08",
 							SmallArea:   0,
 							CollectArea: "該当なし",
-							MainCategory: MainCategory{
+							MainCategory: core.MainCategory{
 								Code: "07",
 								Name: "企業・家計・経済",
 							},
-							SubCategory: SubCategory{
+							SubCategory: core.SubCategory{
 								Code: "05",
 								Name: "国民経済計算",
 							},
 							OverallTotalNumber: 2508,
 							UpdatedDate:        "2022-09-16",
-							StatisticsNameSpec: StatisticsNameSpec{
+							StatisticsNameSpec: core.StatisticsNameSpec{
 								TabulationCategory: "四半期別ＧＤＰ速報",
 							},
-							TitleSpec: TitleSpec{
+							TitleSpec: core.TitleSpec{
 								TableCategory:     "国内総生産（支出側）及び各需要項目",
 								TableName:         "名目原系列（1994年1Q～）",
 								TableSubCategory1: "2015暦年基準",
 							},
 						},
-						Class: ClassInf{
-							ClassObj: []ClassObj{
+						Class: core.ClassInf{
+							ClassObj: []core.ClassObj{
 								{
 									ID:          "tab",
 									Name:        "表章項目",
 									Description: "Excelの書式設定で統計表の数値を\"-0.0\"としている場合、データベース上\"0.0\"として収録されているため、Excel統計表の数値とは必ずしも一致しない。",
-									Class: []ClassObjClass{
+									Class: []core.ClassObjClass{
 										{Code: "11", Name: "金額", Unit: "10億円"},
 									},
 								},
 								{
 									ID:   "cat01",
 									Name: "国内総生産_名目原系列",
-									Class: []ClassObjClass{
+									Class: []core.ClassObjClass{
 										{Code: "11", Name: "国内総生産(支出側)", Level: "1"},
 										{Code: "12", Name: "民間最終消費支出", Level: "1"},
 										{Code: "13", Name: "民間最終消費支出_家計最終消費支出", Level: "2", ParentCode: "12"},
@@ -131,7 +133,7 @@ func TestGetMetaInfoList(t *testing.T) {
 								{
 									ID:   "time",
 									Name: "時間軸（四半期）",
-									Class: []ClassObjClass{
+									Class: []core.ClassObjClass{
 										{Code: "1994000103", Name: "1994年1～3月期", Level: "3", ParentCode: "1994010000"},
 										{Code: "1994000406", Name: "1994年4～6月期", Level: "3", ParentCode: "1994010000"},
 										{Code: "1994000709", Name: "1994年7～9月期", Level: "3", ParentCode: "1994020000"},
@@ -258,7 +260,7 @@ func TestGetMetaInfoList(t *testing.T) {
 
 	ctx := context.Background()
 	hc := mockHttpClientGetMetaInfoList{}
-	ac := NewApiClient(&hc, CommonParams{})
+	ac := core.NewApiClient(&hc, core.CommonParams{})
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
