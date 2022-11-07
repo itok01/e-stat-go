@@ -38,7 +38,7 @@ func TestGetStatsList(t *testing.T) {
 							Limit:       2,
 						},
 					},
-					DataList: &core.ResponseGetStatsListDataList{
+					DataList: core.ResponseGetStatsListDataList{
 						Number: 101,
 						Result: core.ResultInf{
 							FromNumber: 1,

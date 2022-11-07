@@ -39,7 +39,7 @@ type ResponseGetStatsListDataList struct {
 type ResponseGetStatsList struct {
 	Result    ResponseResult                `xml:"RESULT"`
 	Parameter ResponseGetStatsListParameter `xml:"PARAMETER"`
-	DataList  *ResponseGetStatsListDataList `xml:"DATALIST_INF,omitempty"`
+	DataList  ResponseGetStatsListDataList `xml:"DATALIST_INF,omitempty"`
 }
 
 type ResponseGetStatsListRoot struct {
